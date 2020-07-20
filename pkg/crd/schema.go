@@ -384,8 +384,8 @@ func structToSchema(ctx *schemaContext, structType *ast.StructType) *apiext.JSON
 
 		// process oneOf groups
 		if fieldMarkedOneOf {
-			props.OneOf = append(props.OneOf, v1beta1.JSONSchemaProps{
-				Properties: map[string]v1beta1.JSONSchemaProps{fieldName: {}},
+			props.OneOf = append(props.OneOf, apiext.JSONSchemaProps{
+				Properties: map[string]apiext.JSONSchemaProps{fieldName: {}},
 				Required:   []string{fieldName},
 			})
 		}
